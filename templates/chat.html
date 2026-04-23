@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+</head>
+<body>
+    <div id="login-container">
+        <h1>聊天室</h1>
+        <input type="text" id="username-input" placeholder="输入你的名字">
+        <button id="join-btn">进入聊天室</button>
+    </div>
+
+    <div id="chat-container" style="display: none;">
+        <div id="chat-header">
+            <span>当前在线：<span id="user-count">0</span> 人</span>
+        </div>
+        <div id="messages"></div>
+        <div id="input-area">
+            <input type="text" id="message-input" placeholder="输入消息...">
+            <button id="send-btn">发送</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>
